@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-widht, initial-scale=1">
+    </head>
+<body>
+    <title>Calculator Waans</title>
+
+<h2>Private Calculator</h2>
+
+<p>Calculator only for Waans</p>
+    <form action="" method="POST">
+    	<label> Nama Barang :
+            <br><input type="text" id="namabarang" size="25"></br>
+            <br><input type="text" value="                 ^^Optional" size="25" disabled>
+            </br>
+        </label>
+        <label> Harga Barang: 
+            <br><input type="text" id="Nama" value="" maxlength="4" size="5">
+            </br>
+        </label>
+        <label> Harga Jual satuan WL: 
+            <br><input type="text" id="wlku" maxlength="3" size="3">
+        </br>
+        </label>
+        <label> Harga Beli satuan WL: 
+            <br><input type="text" id="wlkubuy" value="150" maxlength="3" size="3">
+        </br>
+        </label>
+        <p> </p>
+        <label>
+            <button onclick="submitdata()"> Kalkulasi Perjumlahan </button>
+            <button onclick="checkharga()"> Check Harga Ances </button>
+            <p>Last Updated Program/Prices: 29/8/21 Jam 1 malam</p>
+        </label>        
+    </form>
+
+<p id="demo"></p>
+
+<script>
+    function checkharga() {
+        let vers = "Last Updated Program/Prices: 29/8/21 Jam 1 malam";
+        let wealth = 217;
+        let wisdom = 225;
+        let orb = 220;
+        let seed = 235;
+        let tesseract = "890-900";
+        let wl = "WL";
+
+    alert("list Daftar Harga" + "\n" + "========" + "\n" + vers + "\n" + "========" + "\n" + "Ancestral Riches: " + wealth + wl + "\n" + "Ancestral Totem: " + wisdom + wl + "\n" + "Ancestral Orb: " + orb + wl + "\n" + "Ancestral Seed: " + seed + wl + "\n" + "Ancestral Tesseract: " + tesseract + wl)
+    }
+	function submitdata() {
+			var namabarang = document.getElementById("namabarang").value;
+            var nama = document.getElementById("Nama").value;
+            var wlku = document.getElementById("wlku").value;
+            var wlkubuy = document.getElementById("wlkubuy").value;
+let rp = "Rp. ";
+let harga = nama;
+let wlbag = 200;
+let wlme = wlku;
+let wlbuy = wlkubuy;
+let tax = 20;
+let wl = "(WL)";
+let harki = harga * wlme; // Harga Asli Barang bila harga 185
+let harog = harga * wlbag; // Harga Original
+let harogdis = rp + harga * wlbag; // Harga Original Display
+let harit1 = harog / tax;
+let harit = harit1 + harog; 
+let haritdis = rp + harit; // Set Harga Display
+let taxit = harit - harog;
+let taxitdis = rp + taxit; // Tax ItemKu Display
+let taxbag = harog - harki;
+let taxbagdis = rp + taxbag; // Tax Bagas Display
+let pdpt = harog - taxbag;
+let pdptdis = rp + pdpt; // Pendapatan Display
+let profitku = wlbuy * harga;
+let profitku1 = pdpt - profitku;
+let profitkudis = rp + profitku1; // Profitku Display
+let redraw = profitku1 / wlbuy;
+let redrawdis = redraw + wl; // Redraw Money To Wls
+
+
+alert("Nama Barang: " + namabarang + "\n" + "Harga Original: " + harogdis + "\n" + "Set Harga ItemKu: " + haritdis + "\n" + "Tax Itemku: " + taxitdis + "\n" + "Tax Bagas: " + taxbagdis + "\n" + "Yang Kudapat: " + pdptdis + "\n" + "Profitku: " + profitkudis + " / " + redrawdis)}
+</script>
+<style>
+    @viewport {
+    zoom: 1.0;
+    width: extend-to-zoom;
+}
+@-ms-viewport {
+    width: extent-to-zoom;
+    zoom: 1.0;
+}
+</style>
+
+</body>
+</html>
