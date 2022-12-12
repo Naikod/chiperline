@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.navbar-fixed {
+  @apply fixed z-[9999] ;
+  backdrop-filter: blur(5px);
+  
+}
+
+#LOGO {
+  font-family: Alata;
+}
