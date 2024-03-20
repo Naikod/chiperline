@@ -14,6 +14,8 @@ npm install chiperline
 - Generating Random UUID
 - Generating Random Name
 - Generating Random Int (min, max)
+
+  
 [Try demo](https://naikod.github.io)
 
 ## Docs
