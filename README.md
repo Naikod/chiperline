@@ -1,4 +1,4 @@
-# Chiperline
+# Chiperline [DEPRECATED README.md, See [npmjs,com](https://www.npmjs.com/package/chiperline) for more information]
 
 Chiperline an encryption method to protect data by obfuscating key map and generating randomly seed to protect the key.
 
