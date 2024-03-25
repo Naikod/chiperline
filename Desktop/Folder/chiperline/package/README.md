@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Chiperline
 
 Chiperline an encryption method to protect data by obfuscating key map and generating randomly seed to protect the key.
@@ -105,8 +104,3 @@ Example:
 const numb = chiper.randomInt(1,10)
 console.log(numb) // 7
 ```
-=======
-"# FSWeb" 
-"# FSWeb" 
-# LIFStudioLumajang First Commit
->>>>>>> 437e8aa488df2c5b147e34d3683d283504052429
