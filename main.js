@@ -18,18 +18,15 @@ function hashString(str) {
     hash = hash & hash;
     hash = Math.abs(hash);
   }
-  return hash
+  return hash;
 }
 
 function HashingKey(str) {
-  hash = 0;
-  if (str.length === 0) return hash;
+  res = "";
   for (let i = 0; i < str.length; i++) {
-    const char = str.charCodeAt(i);
-    hash = (hash << 5) - hash + char;
-    hash &= hash;
+    res += hashString(`${str.charCodeAt(i)}`);
   }
-  return hash;
+  return Math.floor(Number(res) / hashString(res));
 }
 
 function ShuffleArray(array, seed) {
@@ -99,15 +96,16 @@ function GenerateKeyMap() {
 class Chiperline {
   constructor(key, watermark) {
     if (key) {
-      this.key = HashingKey(hashString(key));
+      this.key = HashingKey(key);
     } else {
-      this.key = HashingKey(hashString(""));
+      this.key = HashingKey(`${hashString("")}`);
     }
     if (watermark) {
-      this.watermark = watermark
+      this.watermark = watermark;
     } else {
-      this.watermark = false
+      this.watermark = false;
     }
+    console.log(this.key);
   }
 
   compare(string, encrypted_text) {
@@ -171,10 +169,9 @@ class Chiperline {
           [...string.slice(0, string.length - 10)],
           this.key
         ).join("")}chiperline`
-      : `${UnshuffleArray(
-          [...string.slice(0, string.length)],
-          this.key
-        ).join("")}`;
+      : `${UnshuffleArray([...string.slice(0, string.length)], this.key).join(
+          ""
+        )}`;
     let GetOriginalKey = [
       UnshuffleArray(string.slice(0, 11).split(""), hashString(GetSeed)),
       UnshuffleArray(string.slice(11, 20).split(""), hashString(GetSeed)),

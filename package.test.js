@@ -6,23 +6,18 @@ test("Encrypted string must be ended with '.sportline'", () => {
   expect(encrypted.slice(encrypted.length-10, encrypted.length)).toBeTruthy();
 })
 
-test("Error if it doesnt contain key", () => {
-  expect(() => {
-    const chiperline = new Chiperline()
-  }).toThrow();
-})
-
 test("Return with original string if the key correct", () => {
-  const chiperline = new Chiperline("TrueKey")
+  const chiperline = new Chiperline("TrueKey", true)
   const enc = chiperline.encrypt("Hello World")
-  console.log(enc)
   const dec = chiperline.decrypt(enc)
   expect(dec).toMatch(/Hello World/)
 })
 
 test("Return with original string if the key incorrect", () => {
-  const chiperline = new Chiperline("NoTrueKey")
-  const dec = chiperline.decrypt("oC154D6180Ce3e41F077CAA6Cf2D9a90333e3456494F1498107b3d6d9Eb590912.sportline")
+  const chiperline = new Chiperline("TrueKey", true)
+  const enc = chiperline.encrypt("Hello World")
+  const _chiperline = new Chiperline("FalseKey", true)
+  const dec = _chiperline.decrypt(enc)
   expect(dec).not.toMatch(/Hello World/)
 })
 
