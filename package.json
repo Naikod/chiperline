@@ -1,6 +1,6 @@
 {
   "name": "chiperline",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "Chiperline an encryption method to protect data by obfuscating key map and generating randomly seed to protect the key.",
   "main": "main.js",
   "scripts": {
