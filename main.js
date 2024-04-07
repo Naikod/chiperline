@@ -105,7 +105,6 @@ class Chiperline {
     } else {
       this.watermark = false;
     }
-    console.log(this.key);
   }
 
   compare(string, encrypted_text) {
